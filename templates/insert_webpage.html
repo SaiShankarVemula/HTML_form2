@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Document</title>
+</head>
+<body>
+    <center>
+        <h1>Insert into Webpage</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="tn">Topic_name</label>
+            <select name="tn" id="tn">
+                {% for wo in LWO %}
+                <option value="{{wo}}">{{wo.topic_name}}</option>
+                {% endfor %}
+            </select><br><br>
+            <label for="na">name</label>
+            <input type="text" name="na" id="na"><br><br>
+            <label for="ur">url</label>
+            <input type="text" name="ur" id="ur"><br><br>
+            <input type="submit">
+        </form>
+        
+    </center>
+</body>
+</html>
